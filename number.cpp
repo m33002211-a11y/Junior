@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int numbers[] = {109,99,23,45,23,2,5,1};
+    int n = 8;
+
+    for(int i = 0; i < n - 1; i++)
+    {
+        for(int j = 0; j < n - i - 1; j++)
+        {
+            if(numbers[j] > numbers[j + 1])
+            {
+                int temp = numbers[j];
+                numbers[j] = numbers[j + 1];
+                numbers[j + 1] = temp;
+            }
+        }
+    }
+
+    cout << "Numbers in Ascending Order:\n";
+
+    for(int i = 0; i < n; i++)
+    {
+        cout << numbers[i] << " ";
+    }
+
+    return 0;
+}
